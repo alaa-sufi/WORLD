@@ -1,10 +1,5 @@
 // start fonts
 @font-face {
-  font-family: Alako;
-  font-weight: bold;
-  src: url("../fonts/Alako.ttf") format("opentype");
-}
-@font-face {
   font-family: "janna";
   font-weight: bold;
   src: url("../fonts/Janna Bold.ttf") format("opentype");
@@ -92,7 +87,13 @@ video{
 .logo{
    width:250px;
    max-width: 90%;
+   margin-right: auto;
+   margin-left: auto;
    margin-bottom: 3rem;
+
+   svg{
+    filter: drop-shadow(6px 4px 6px black);
+   }
 }
 h1{
     font-weight: bold;
@@ -108,9 +109,10 @@ h1{
     transform: translate(-50%, -50%);
 }
 .comming{
-    @include screen(font-size,7vw ,2rem ,2.5rem , 2.8rem,3rem );
+  width: 60%;
+  margin: auto;
     animation: fade 1s linear infinite alternate;
-  font-family: Alako, sans-serif;
+    max-width: 400px;
 
 
 }
