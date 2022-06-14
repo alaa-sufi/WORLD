@@ -24,7 +24,12 @@
             <div class="circle three"></div>
         </div>
     </div>
-    <video src="./files/video.mp4" muted></video>
+    <video muted  width="200" heigth="100">
+        <source src="./files/video.mp4" type="video/mp4">
+        <source src="./files/video.ogg" type="video/ogg">
+        <source src="./files/video.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
     <div class="soon">
         <h1>Website Under Constriction</h1>
         <div class="logo">
@@ -32,7 +37,6 @@
                 viewBox="0 0 1063.17 950.85">
                 <defs>
                     <style>
-                       
                         .cls-2 {
                             fill: #fff;
                         }
