@@ -1,0 +1,175 @@
+// start fonts
+@font-face {
+  font-family: "janna";
+  font-weight: bold;
+  src: url("../fonts/Janna-Bold.ttf") format("opentype");
+}
+// end fonts
+// start funcs
+@mixin screen($property, $value1, $value2, $value3, $value4 , $value5) {
+    @media (max-width: 576px) {
+      #{$property}: $value1;
+    }
+  
+    @media (min-width: 576px)  {
+      #{$property}: $value2;
+    }
+  
+    @media (min-width: 768px) {
+      #{$property}: $value3;
+    }
+  
+    @media (min-width: 992px)  {
+      #{$property}: $value4;
+    }
+    @media (min-width: 1200px)  {
+      #{$property}: $value5;
+    }
+  }
+// end funcs
+// start reset
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+// end reset
+// start style 
+body {
+  font-family: "janna", sans-serif;
+  color:#fff;
+  min-height: 100vh;
+  font-weight: bold;
+  
+}
+video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+audio{
+  display: none;
+}
+.logo{
+   width:250px;
+   max-width: 90%;
+   margin-right: auto;
+   margin-left: auto;
+   margin-bottom: 3rem;
+
+   svg{
+    filter: drop-shadow(6px 4px 6px black);
+   }
+}
+h1{
+    font-weight: bold;
+    @include screen(font-size,10vw ,3rem ,3.2rem , 3.5rem,4rem );
+    margin-bottom: 3rem;
+}
+.soon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width:100%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+.comming{
+  width: 60%;
+  margin: auto;
+    animation: fade 1s linear infinite alternate;
+    max-width: 400px;
+
+
+}
+.loading{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index:9;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    .spinner2{
+        display: flex;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50% , 50%);
+        .circle{
+          width: 1rem;
+          height: 1rem;
+          background-color: #36b8a6;
+          border-radius:50%;
+          margin:0.1rem;
+          animation: scale 0.5s linear 0s infinite alternate;
+          &.one{
+            animation-delay:0s;
+          }
+          &.two{
+            animation-delay:0.2s;
+          }
+          &.three{
+            animation-delay:0.4s;
+          }
+        }
+        
+      }
+}
+audio{
+    // display: none;
+}
+// end style 
+@keyframes fade{
+    0%{
+        opacity: 0.2;
+    }
+    50%{
+opacity: 0.4;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes scale{
+    from{transform:scale(0.2)}
+    to{transform:scale(1)}
+  }
